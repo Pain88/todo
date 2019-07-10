@@ -1,17 +1,10 @@
-const input = document.querySelector('.todo-input');
-const list = document.querySelector('.todo-list');
-const btnAdd = document.querySelector('.todo-add');
 
-btnAdd.addEventListener('click', function(){
-    let value = input.value;
-    let item = createElement(value);
-    input.value = "";
-    addTodo(item);
-});
-
-function addTodo(todoItem){
+function addTodo(event){
+    event.preventDefault();
+    if(!input.value) return;
+    let todoItem = createElement(input.value);
     list.appendChild(todoItem);
-    input.textContent = "";
+    input.value = "";
 }
 
 function createElement(value){
@@ -43,3 +36,18 @@ function createElement(value){
 
     return item;
 }
+
+
+
+
+const input = document.querySelector('.todo-input');
+const list = document.querySelector('.todo-list');
+const btnAdd = document.querySelector('.todo-add');
+
+btnAdd.addEventListener('click', addTodo);
+    let value = input.value;
+    if (!value) return;
+    let item = createElement(value);
+    input.value = "";
+    addTodo(item);
+
