@@ -1,10 +1,35 @@
 ---
-title: Index page
+{% set title = "todo list" %}
 ---
 {% extends "layouts/_layout.html" %}
 
 {% block content %}
-	
 
+<header>
+	<h1 class="title">My todo project</h1>
+</header>
+<section class="todo">
+
+	<div class="todo-wrapper">
+		<div class="todo-header">
+			<h2>Fill in the field and click 'add'</h2>
+		</div>
+		<div class="todo-body">
+			<ul class="todo-list">
+				<li>
+					<p class="todo-text">Create todo application</p>
+					<button class="todo-edit"><i class="fas fa-edit"></i></button>
+					<button class="todo-delete"><i class="fas fa-trash-alt"></i></button>
+				</li>
+
+			</ul>
+			<div class="todo-new">
+				<input type="text" placeholder="write your text.." class="todo-input">
+				<button class="todo-add"><i class="fas fa-plus"></i></button>
+			</div>
+		</div>
+	</div>
+
+</section>
 
 {% endblock %}

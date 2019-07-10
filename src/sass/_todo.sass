@@ -1,0 +1,76 @@
+body, input
+    font-family: 'Rancho', cursive;
+header
+    text-align: center
+    padding-top: 30px
+    .title
+        font-size: 68px
+        +ls(100em)
+        color: rgba(0,0,0,0.8)
+.todo
+    margin-top: 4em
+    text-align: center
+    &-wrapper
+        
+        border: 3px solid black
+        width: 800px
+        margin: 0 auto
+        border-radius: 25px
+    &-header
+        font-size: 35px
+        padding: 30px
+        position: relative
+        &:after
+            content: ""
+            display: block
+            bottom: 30px
+            width: 100%
+            left: 0
+            right: 0
+            background-color: black
+            height: 2px
+            position: absolute
+    &-body
+    &-list
+        list-style-type: georgian
+        &:first-child
+            li
+                margin-top: 0
+        li
+            display: flex
+            justify-content: center
+            font-size: 30px
+            background: white
+            margin: 25px 0
+            padding: 10px
+            border: 2px solid purple
+            border-left: none
+            border-right: none
+    &-text
+        margin-right: auto
+        padding-left: 20px
+        font-size: 35px
+    &-edit
+    &-delete
+    &-new
+        margin: 25px 0
+    &-input
+        font-size: 35px
+        width: 500px
+        box-shadow: 0px 0px 7px rgba(0,0,0,0.2)
+        border-bottom: 1px solid rgba(0,0,0,0.54)
+        &:focus
+            box-shadow: 0px 2px 7px purple
+    &-add
+    &-edit, &-delete, &-add
+        background: none
+        font-size: 24px
+        margin: 0px 20px
+        transition: transform 0.1s linear
+        border-radius: 50%
+        width: 35px
+        height: 35px
+        &:hover
+            transform: scale(1.3)
+        &:active
+            transform: scale(1.2)
