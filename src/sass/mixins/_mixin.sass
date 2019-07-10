@@ -1,0 +1,29 @@
+=r($width)
+  @media only screen and (max-width: $width+ "px")
+    @content
+// font-family 
+=font($alias, $name)
+  @font-face
+    font-family: $alias
+    src: url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".woff") format("woff")
+    font-weight: normal
+    font-style: normal
+    font-display: swap
+// to use:
+//+font(black, cytiapro-black-webfont)
+=font-face($font-family,$alias, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) 
+    @font-face 
+        font-family: $font-family
+        font-weight: $weight
+        font-style: $style
+        src: url("#{$file-path}.eot")
+        src: local("#{$font-family} #{$alias}"), local('#{$font-family}-#{$alias}'),
+        url("#{$file-path}.eot?#iefix") format('embedded-opentype'),
+        url("#{$file-path}.woff") format('woff2'),
+        url("#{$file-path}.woff") format('woff'),
+        url("#{$file-path}.ttf") format('truetype')
+=ls($number)
+    letter-spacing: $number / 1000
+=rmin($width)
+  @media only screen and (min-width: $width+ "px")
+    @content
