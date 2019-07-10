@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("var input = document.querySelector('.todo-input');\nvar list = document.querySelector('.todo-list');\nvar btnAdd = document.querySelector('.todo-add');\nbtnAdd.addEventListener('click', function () {\n  var value = input.value;\n  var item = createElement(value);\n  input.value = \"\";\n  addTodo(item);\n});\n\nfunction addTodo(todoItem) {\n  list.appendChild(todoItem);\n  input.textContent = \"\";\n}\n\nfunction createElement(value) {\n  var item = document.createElement('li');\n  var itemText = document.createElement('p');\n  itemText.classList.add('todo-text');\n  itemText.textContent = value;\n  var itemEdit = document.createElement('button');\n  itemEdit.classList.add('todo-edit');\n  var itemEditIcon = document.createElement('i');\n  itemEditIcon.className = \"fas fa-edit\";\n  itemEdit.appendChild(itemEditIcon);\n  var itemDelete = document.createElement('button');\n  itemDelete.classList.add('todo-delete');\n  var itemDeleteIcon = document.createElement('i');\n  itemDeleteIcon.className = \"fas fa-trash-alt\";\n  itemDelete.appendChild(itemDeleteIcon);\n  item.appendChild(itemText);\n  item.appendChild(itemEdit);\n  item.appendChild(itemDelete);\n  return item;\n}\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ }),
 
